@@ -11,7 +11,7 @@ def get_price(item):
         return 25
     else:
         return 0
-
+    
 def item_cost(item, qty):
     price=get_price(item)
     return price*qty
@@ -31,7 +31,6 @@ def split_bill(total, people):
     each_pays = total/people
     left_over = total%people
     return each_pays,left_over
-
 
 # ---------------- Main program ----------------
 # A group of 3 friends orders 2 dosa and 3 coffee, with a 10% coupon.
