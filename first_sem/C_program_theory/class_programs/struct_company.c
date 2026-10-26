@@ -15,13 +15,14 @@ int main(){
         printf("Enter Employee Name: ");
         scanf(" %s", emp[i].name);
         printf("Enter Designation: ");
-        scanf("%s", emp[i].designation);
+        scanf(" %s", emp[i].designation);
         printf("Enter Department: ");
-        scanf("%s", emp[i].department);
+        scanf(" %s", emp[i].department);
         printf("Enter Salary: ");
         scanf("%f", &emp[i].salary);
     }
-    printf("\n-----EMPLOYEE DETAILS-----\n");
+    printf("\n--- Employee Details ---\n");
+
     for (int i = 0; i < 3; i++){
         printf("\nEmployee ID: %d\n", emp[i].emp_id);
         printf("Name: %s\n", emp[i].name);
