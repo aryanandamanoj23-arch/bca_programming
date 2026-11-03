@@ -73,11 +73,14 @@ void enqueue(char name[])
         printf("Waiting Room Full!Please Come Later");
         return;
     }
+    if(front==-1){
+        front=0;
+    }
     rear++;
     queue[rear].token=nextToken;
     strcpy(queue[rear].name,name);
-    nextToken++;
     printf("Tocken %d Issued To %s",nextToken,name);
+    nextToken++;
 }
 
 /*
@@ -93,11 +96,13 @@ void dequeue()
         printf("No Patients Waiting.");
         return;
     }
-    front++;
     printf("Calling Tocken %d - %s , Please go to the doctor.",queue[front].token,queue[front].name);
     if (front>rear){
         front=-1;
         rear=-1;
+    }
+    else{
+        front++;
     }
 }
 
@@ -129,8 +134,9 @@ void display()
     }
     printf("Waiting:");
     for(int i=front;i<=rear;i++){
-        printf("[%d - %s]",queue[front].token,queue[front].name);
+        printf("[%d - %s]",queue[i].token,queue[i].name);
     }
+    printf("\n");
 }
 
 /*
